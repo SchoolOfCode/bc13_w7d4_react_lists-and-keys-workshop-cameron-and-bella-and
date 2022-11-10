@@ -4,9 +4,9 @@ import './index.css';
 
 import samplePosts from '../../libs/data';
 
-function Post(props) {
+function Post(samplePosts) {
   return <article > 
-   <h1 text = {props.postId} > {props.text}</h1></article>;
+   <h1> {samplePosts.text} </h1></article>;
 }
 
 export default Post;
