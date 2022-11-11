@@ -4,9 +4,16 @@ import './index.css';
 
 import samplePosts from '../../libs/data';
 
-function Post(samplePosts) {
-  return <article > 
-   <h1> {samplePosts.text} </h1></article>;
+function Post(props, index) {
+  return <article >
+  <img alt ={props.alt} src ={props.img} style = {{height:200}}></img>
+   <h1 key = {props.postId} > {props.title}  </h1>
+   <h2 className='author'> {props.author}</h2>
+   <h3 className='date'> {props.date} </h3>
+    <p className='text'> {props.text}</p>
+    {props.highlights.map((highlight)=>
+    <li key = {highlight.indexOf()}>{highlight}</li> )}
+   </article>;
 }
 
 export default Post;
